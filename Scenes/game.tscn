@@ -318,6 +318,32 @@ label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BarreTemps" type="VBoxContainer" parent="UI/OWElements/Columns/Stats/Timer"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = -17.0
+offset_right = 911.0
+offset_bottom = 26.0
+theme_override_constants/separation = 0
+
+[node name="PanelProgressBar" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar"]
+layout_mode = 2
+size_flags_vertical = 1
+min_value = -14400.0
+max_value = 0.0
+show_percentage = false
+
+[node name="TimerBarIndicateur" type="Label" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps"]
+layout_mode = 2
+
 [node name="Inventaire" type="HBoxContainer" parent="UI/OWElements/Columns"]
 layout_mode = 2
 theme_override_constants/separation = 70

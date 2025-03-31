@@ -9,6 +9,7 @@ var time : float
 var format_string = "%02d : %02d : %02d"
 
 @onready var time_label = $PanelLabel/Label
+@onready var timer_bar = $BarreTemps/PanelProgressBar/ProgressBar
 
 func _ready() -> void:
 	time_label.text = format_string % [heure, minute, seconde]
@@ -17,6 +18,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if time > 0:
 		time -= delta * time_multi
+		timer_bar.value = -time
+		print(time)
 		heure = int(time / 3600)
 		minute = int(time / 60) % 60
 		seconde = int(time) % 60
