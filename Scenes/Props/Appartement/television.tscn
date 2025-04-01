@@ -56,6 +56,7 @@ timeline = "Television"
 material = SubResource("ShaderMaterial_70myv")
 position = Vector2(-24, -16)
 sprite_frames = SubResource("SpriteFrames_vc204")
+animation = &"stop"
 autoplay = "default"
 centered = false
 script = ExtResource("4_770mh")

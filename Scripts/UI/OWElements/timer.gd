@@ -43,7 +43,7 @@ func add_time(added_time: float) -> void:
 	
 func remove_time(removed_time: float) -> void:
 	changing_timer_bar.value = -time
-	changing_timer_bar.value += -removed_time
+	changing_timer_bar.value += removed_time
 	changing_timer_bar.visible = true
 	
 	if tween: tween.kill()
@@ -52,7 +52,7 @@ func remove_time(removed_time: float) -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	changing_timer_bar.visible = false
-	time += removed_time
+	time += -removed_time
 
 func _on_button_pressed() -> void:
-	remove_time(-1000.0)
+	remove_time(1000.0)
