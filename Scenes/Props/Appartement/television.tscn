@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c651srsug8m05"]
+[gd_scene load_steps=11 format=3 uid="uid://c651srsug8m05"]
 
 [ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="1_2wgxy"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_blxri"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_fbh47"]
+[ext_resource type="Script" uid="uid://c5ha71uutpqmu" path="res://Scripts/Props/Types/animation_television.gd" id="4_770mh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70myv"]
 shader = ExtResource("2_fbh47")
@@ -17,6 +18,10 @@ region = Rect2(128, 64, 48, 32)
 atlas = ExtResource("2_blxri")
 region = Rect2(176, 64, 48, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp5si"]
+atlas = ExtResource("2_blxri")
+region = Rect2(128, 64, 48, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vc204"]
 animations = [{
 "frames": [{
@@ -29,6 +34,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp5si")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
@@ -45,6 +58,7 @@ position = Vector2(-24, -16)
 sprite_frames = SubResource("SpriteFrames_vc204")
 autoplay = "default"
 centered = false
+script = ExtResource("4_770mh")
 
 [node name="Area2D" type="Area2D" parent="."]
 

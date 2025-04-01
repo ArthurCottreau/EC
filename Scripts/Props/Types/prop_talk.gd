@@ -12,3 +12,4 @@ func on_interact(player: Player) -> void:
 	# Modifie la direction du joueur pour faire face au PNJ
 	var direction: Vector2 = face_dir.global_position - player.position
 	player.skin.set_animation_direction(direction)
+	

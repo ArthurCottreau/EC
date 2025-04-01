@@ -6,6 +6,7 @@ var count: int = 0
 
 func _on_tv_eteint() -> void:
 	$Meuble/SpriteTV.play("stop")
+	#changer animation TV dans la map
 	await get_tree().create_timer(2.5).timeout
 	get_parent().quit_minigame()
 
