@@ -56,6 +56,11 @@ func shower_stop():
 	valve_button.disabled = false
 
 func _on_button_pressed() -> void:
+	
+	#TEMPORAIRE
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(load("uid://ba8had06bq351"))
+	
 	valve_button.disabled = true
 	if timer.is_stopped():
 		shower_start()
@@ -64,3 +69,7 @@ func _on_button_pressed() -> void:
 
 func _on_bouchon_pressed() -> void:
 	is_bath_mode = !is_bath_mode
+	
+	#TEMPORAIRE
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(load("uid://ba8had06bq351"))

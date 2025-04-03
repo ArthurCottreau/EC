@@ -535,8 +535,8 @@ vertical_alignment = 1
 
 [node name="BarreTemps" type="VBoxContainer" parent="UI/OWElements/Columns/Stats/Timer"]
 layout_mode = 0
-offset_left = 450.0
-offset_right = 888.0
+offset_left = 525.0
+offset_right = 963.0
 offset_bottom = 59.0
 theme_override_constants/separation = 0
 

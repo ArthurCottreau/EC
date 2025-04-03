@@ -1,3 +1,6 @@
+if SaveManager.getElement("Quests", "S_television") == true :
+	Votre télévision est éteinte ! Faites pas attention à la loupiote qui clignote encore ;)
+	[end_timeline]
 La LED de la TV clignote, indiquant qu'elle est en veille.
 if SaveManager.getElement("Quests", "0_tutoriel") == true or SaveManager.getElement("Quests", "0_tutoriel") == null:
 	Peut-être y'a t-il quelque chose que vous pouvez faire ?

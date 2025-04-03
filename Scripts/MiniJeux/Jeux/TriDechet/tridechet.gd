@@ -13,6 +13,11 @@ func _ready() -> void:
 	randomize()
 
 func update_trash_count() -> void:
+	
+	#TEMPORAIRE
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(load("uid://ba8had06bq351"))
+	
 	trash_count += 1
 	if trash_count == max_trash_items:
 		EventBus.emit_signal("set_empreinte", score)

@@ -14,6 +14,13 @@ func _initialize_follower() -> void:
 	EventBus.add_signal("add_follower", add_follower)
 
 func add_follower(arg: int = 1) -> void:
+	
+		#TEMPORAIRE
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(load("uid://411hqn6fotde"))
+	
+	EventBus.emit_signal("change_time", 180)
+	
 	anim_player.play("feedback_good")
 	follower += arg
 	follower_label.text = str(follower)

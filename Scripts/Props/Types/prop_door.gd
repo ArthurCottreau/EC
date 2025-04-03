@@ -7,7 +7,13 @@ var is_inside: bool = false
 @onready var collider_box: CollisionShape2D = $StaticBody2D/CollisionShape2D
 
 func on_interact(_player: Player) -> void:
+
 	if can_open and !is_inside:
+		
+		#TEMPORAIRE
+		AudioManager.stop_sfx()
+		AudioManager.play_sfx(load("uid://ba8had06bq351"))
+		
 		if !toggle_state:
 			sprite.play("close_open")
 			toggle_state = true

@@ -18,6 +18,11 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("set_mission_name", set_mission_name)
 
 func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
+	
+	#TEMPORAIRE
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(load("uid://3rq04cbtl3d1"))
+	
 	var new_quest_data: Resource = load(quest_data.quests[key])
 	var new_quest: BoxContainer = quest_prefab.instantiate()
 	
@@ -52,6 +57,11 @@ func clean_quests() -> void:
 		i.queue_free()
 
 func set_quest_state(quest_name: String) -> void:
+	
+	#TEMPORAIRE
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(load("uid://cj7t62q6lphus"))
+	
 	target.get_node(quest_name + "/Panel/Label").modulate = Color.GREEN
 	SaveManager.setElement("Quests", {quest_name: true})
 

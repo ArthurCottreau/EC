@@ -22,5 +22,14 @@ func on_update_empreinte(arg: float) -> void:
 func play_feedback(score: float) -> void:
 	if score > 0:
 		anim_player.play("feedback_bad")
+		
+		#TEMPORAIRE
+		AudioManager.stop_sfx()
+		AudioManager.play_sfx(load("uid://b7tvwd2f2hquj"))
+		
 	else:
 		anim_player.play("feedback_good")
+		
+		#TEMPORAIRE
+		AudioManager.stop_sfx()
+		AudioManager.play_sfx(load("uid://411hqn6fotde"))
