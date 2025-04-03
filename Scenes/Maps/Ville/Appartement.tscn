@@ -1,8 +1,8 @@
-[gd_scene load_steps=50 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=51 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
-[ext_resource type="AudioStream" uid="uid://cr30twokork7q" path="res://Audio/Streams/Loop_maison.tres" id="2_7f2nx"]
+[ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_ev0lf"]
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/Appartement/baignoire.tscn" id="3_hb0ix"]
 [ext_resource type="PackedScene" uid="uid://0ji1ktwqxaxa" path="res://Scenes/Props/Appartement/meuble_sdb.tscn" id="4_swjjx"]
 [ext_resource type="PackedScene" uid="uid://buv610vd4bdfb" path="res://Scenes/Props/Appartement/lit.tscn" id="6_clj8j"]
@@ -143,7 +143,7 @@ limit_left = -144
 limit_right = 384
 limit_top = -80
 limit_bottom = 256
-stream = ExtResource("2_7f2nx")
+stream = ExtResource("2_ev0lf")
 
 [node name="StartPoints" type="Node2D" parent="."]
 

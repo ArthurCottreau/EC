@@ -5,4 +5,4 @@
 [resource]
 stream_count = 1
 stream_0/stream = ExtResource("1_elvbu")
-stream_0/volume = 0.0
+stream_0/volume = -10.0

@@ -2,6 +2,7 @@ extends Node2D
 
 var audio_music: SoundMusic = SoundMusic.new("Music", 1)
 var audio_sfx: SoundEffects = SoundEffects.new("SFX", 8)
+var current_music
 
 func _ready() -> void:
 	add_child(audio_sfx)
@@ -18,6 +19,7 @@ func stop_sfx() -> void:
 #region Musique
 func play_music(resource: AudioStreamSynchronized) -> void:
 	audio_music.play(resource)
+	current_music = resource
 
 func stop_music() -> void:
 	audio_music.stop()
@@ -42,3 +44,6 @@ func set_bus(bus_id: int ,volume_db: float) -> void:
 func muting_bus(bus_id: int ,is_mute: bool) -> void:
 	AudioServer.set_bus_mute(bus_id, is_mute)
 #endregion
+
+func get_current_music():
+	return current_music

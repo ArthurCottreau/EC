@@ -54,5 +54,5 @@ func initialize_save_checks() -> void:
 		$SceneSaveChecks.initialize()
 
 func initialize_music() -> void:
-	AudioManager.fade_music(0,0)
+	AudioManager.fade_music(-10,0)
 	AudioManager.play_music(stream)

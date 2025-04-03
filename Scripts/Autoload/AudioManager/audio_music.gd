@@ -9,6 +9,7 @@ func play(resource: AudioStreamSynchronized) -> void:
 		var player: AudioStreamPlayer = select_player(resource)
 		player.call_deferred("play")
 
+
 # Utiliser pour stopper la musique
 func stop() -> void:
 	on_player_finished(audio_players.front())

@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=191 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://wrsox72avo62" path="res://Scenes/Pawn/PNJ/pnj_immobile.tscn" id="13_5c4ie"]
 [ext_resource type="Script" uid="uid://gdsipebbr3pd" path="res://Scripts/Events/periph_save_checks.gd" id="15_5c4ie"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="16_6cxdi"]
-[ext_resource type="Script" path="res://Scripts/Events/mission_poubelle.gd" id="17_iuw2w"]
+[ext_resource type="Script" uid="uid://b6r412c6n5w0u" path="res://Scripts/Events/mission_poubelle.gd" id="17_iuw2w"]
 [ext_resource type="Texture2D" uid="uid://rg600cb81l8y" path="res://Graphics/Characters/Generic/character_baptiste.png" id="17_ydjjt"]
 [ext_resource type="PackedScene" uid="uid://chv50xmrlkp03" path="res://Scenes/Props/PeriphOuest/sac_poubelle.tscn" id="18_fx4co"]
 [ext_resource type="Script" uid="uid://cudjjhnq77mhl" path="res://Scripts/Pawn/Types/PNJ/pnj.gd" id="19_1cwe4"]

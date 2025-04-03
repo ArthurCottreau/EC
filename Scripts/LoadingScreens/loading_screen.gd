@@ -15,7 +15,8 @@ func initialize_load_type() -> void:
 	if loading_screen_key.is_empty():
 		_on_event_trigger()
 	else:
-		AudioManager.fade_music(-80, 6.0)
+		if AudioManager.get_current_music() != next_scene.stream :
+			AudioManager.fade_music(-80, 3.0)
 		FadeManager.visible = false
 		var load_trans: Node2D = load(loading_screens.types[loading_screen_key]).instantiate()
 		add_child(load_trans)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://cp1m5aulw3omg"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_0m7db"]
-[ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_dnyma"]
+[ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_dnyma"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="2_uihib"]
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_ipl5a"]
 [ext_resource type="Script" uid="uid://df0d0ft4f664q" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_mobile_manager.gd" id="4_pmrli"]
