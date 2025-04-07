@@ -25,6 +25,7 @@ func _on_interact() -> void:
 	click_offset = get_global_mouse_position() - global_position
 
 func _on_collision_area_area_entered(area: Area2D) -> void:
+	# Vérifie si l'ancre que l'item survol est le bon
 	if area.anchor_id == id_piece_velo:
 		item_above_target = true
 		new_position = area.global_position - (size / 2)
@@ -34,6 +35,7 @@ func _on_collision_area_area_exited(_area: Area2D) -> void:
 	item_above_target = false
 
 func _on_button_up() -> void:
+	# Quand on relache la pièce,si elle est au-dessus du bon ancre, elle s'attache, sinon elle revient à sa position d'origine
 	if item_above_target:
 		position_item = new_position
 		self.disabled = true

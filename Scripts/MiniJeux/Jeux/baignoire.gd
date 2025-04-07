@@ -21,12 +21,13 @@ func shower():
 	
 	if is_bath_mode:
 		if progress_bar.value >= 9:
-			# Placez la signal de sauvegarde ici
+			# Placez le signal de sauvegarde ici
 			EventBus.emit_signal("set_quest_state", "1-2_shower")
 			shower_end()
 	else:
+		# Le score varie en fonction de la progress bar
 		if progress_bar.value >= 6 and progress_bar.value < 12:
-			# Placez la signal de sauvegarde ici
+			# Placez le signal de sauvegarde ici
 			if progress_bar.value == 6:
 				EventBus.emit_signal("set_empreinte", -0.2)
 				EventBus.emit_signal("set_quest_state", "1-2_shower")
@@ -40,14 +41,14 @@ func shower():
 		
 		valve_button.disabled = false
 
-func shower_end() -> void:
+func shower_end() -> void: # Vide la baignoire puis finis le mini jeu -> valide le score
 	valve_button.visible = false
 	timer.stop()
 	animated_sprite.play("shower_end")
 	await get_tree().create_timer(2.0).timeout
 	get_parent().quit_minigame()
 
-func shower_stop():
+func shower_stop(): # Pause la douche avant que le joueur ne soit lavé. Si lavé, appel shower_end
 	if progress_bar.value >= 6:
 		shower_end()
 		return

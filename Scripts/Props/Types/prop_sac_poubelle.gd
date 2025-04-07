@@ -11,9 +11,10 @@ func initialize_garbage() -> void:
 			queue_free()
 
 func on_interact(player: Player) -> void:
-	if SaveManager.getElement("Quests", "3-1_ramasser") == null:
+	if SaveManager.getElement("Quests", "3-1_ramasser") == null: # Quête NON commencée
 		super(player)
-	elif SaveManager.getElement("Quests", "3-1_ramasser") == false:
+	elif SaveManager.getElement("Quests", "3-1_ramasser") == false: #Quête commencée
+		
 		AudioManager.play_sfx(sfx_pick_up, -5.0)
 		
 		var poubelle_data: Array[bool] = SaveManager.getElement("Missions", "Poubelle")

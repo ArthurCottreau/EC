@@ -17,6 +17,7 @@ func cutscene_play(anim_name: String = ""):
 		cut_anim.play()
 
 func cutscene_dialogue(time_cut: String, book_id: int) -> void:
+	#Pause la cutscene et lance un dialogue
 	cut_anim.pause()
 	Dialogic.start(time_cut, "book" + str(book_id))
 

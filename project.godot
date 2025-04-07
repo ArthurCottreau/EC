@@ -28,42 +28,7 @@ FadeManager="*res://Scenes/Autoload/fade_manager.tscn"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={
-"Baignoire": "res://Dialogues/Appartement/Baignoire.dtl",
-"Bibliotheque": "res://Dialogues/Appartement/Bibliotheque.dtl",
-"ChaiseBureau": "res://Dialogues/Appartement/ChaiseBureau.dtl",
-"Introduction": "res://Dialogues/Appartement/Introduction.dtl",
-"Lit": "res://Dialogues/Appartement/Lit.dtl",
-"Livre": "res://Dialogues/Appartement/Livre.dtl",
-"MeubleSDB": "res://Dialogues/Appartement/MeubleSDB.dtl",
-"PorteSortieApp": "res://Dialogues/Appartement/PorteSortieApp.dtl",
-"Rangement": "res://Dialogues/Appartement/Rangement.dtl",
-"Refrigerateur": "res://Dialogues/Appartement/Refrigerateur.dtl",
-"Television": "res://Dialogues/Appartement/Television.dtl",
-"bus_corpo": "res://Dialogues/PeriphOuest/bus_corpo.dtl",
-"bus_periph": "res://Dialogues/PeriphOuest/bus_periph.dtl",
-"debug_tri_dechet": "res://Dialogues/Debug/debug_tri_dechet.dtl",
-"debug_velo": "res://Dialogues/Debug/debug_velo.dtl",
-"dial_test": "res://Dialogues/Debug/dial_test.dtl",
-"dial_test2": "res://Dialogues/Debug/dial_test2.dtl",
-"init": "res://Dialogues/init.dtl",
-"intro_periph": "res://Dialogues/PeriphOuest/intro_periph.dtl",
-"metro_periph": "res://Dialogues/PeriphOuest/metro_periph.dtl",
-"panneau_centre": "res://Dialogues/PeriphOuest/panneau_centre.dtl",
-"playercar_periph": "res://Dialogues/PeriphOuest/playercar_periph.dtl",
-"pnj": "res://Dialogues/Appartement/pnj.dtl",
-"pnj_eboueur": "res://Dialogues/PeriphOuest/pnj_eboueur.dtl",
-"pnj_livraison2": "res://Dialogues/PeriphOuest/pnj_livraison2.dtl",
-"pnj_random1": "res://Dialogues/PeriphOuest/pnj_random1.dtl",
-"pnj_random2": "res://Dialogues/PeriphOuest/pnj_random2.dtl",
-"pnj_random3": "res://Dialogues/PeriphOuest/pnj_random3.dtl",
-"pnj_random4": "res://Dialogues/PeriphOuest/pnj_random4.dtl",
-"porte_appartement": "res://Dialogues/PeriphOuest/porte_appartement.dtl",
-"porte_corpo": "res://Dialogues/PeriphOuest/porte_corpo.dtl",
-"porte_hardware": "res://Dialogues/PeriphOuest/porte_hardware.dtl",
-"quest_poubelles": "res://Dialogues/PeriphOuest/quest_poubelles.dtl",
-"sac_poubelle": "res://Dialogues/PeriphOuest/sac_poubelle.dtl"
-}
+directories/dtl_directory={}
 layout/style_list=["res://Dialogues/Styles/Custom_Style.tres"]
 layout/default_style="res://Dialogues/Styles/Custom_Style.tres"
 variables={}

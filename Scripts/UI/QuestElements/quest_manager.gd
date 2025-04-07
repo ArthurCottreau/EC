@@ -30,7 +30,7 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	var new_quest_margin: MarginContainer = new_quest.get_node("Margin")
 	var quest_panel: PanelContainer = new_quest.get_node("Panel")
 	
-	match (new_quest_data.type):
+	match (new_quest_data.type): # Ajoute un style différent en fonction du type de quête
 		0:
 			new_quest_margin.add_theme_constant_override("margin_top", 35)
 			new_quest_margin.add_theme_constant_override("margin_left", 60)
@@ -45,7 +45,7 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	SaveManager.setElement("Quests", {key: false})
 	
 	target.add_child(new_quest)
-	target.move_child(target.get_child(target.get_child_count()-1), quest_pos) # Pour deplace la quête dans une autre position
+	target.move_child(target.get_child(target.get_child_count()-1), quest_pos) # Pour deplacer la quête dans une autre position
 	
 	# Pour le fade in des quêtes
 	tween = create_tween()
@@ -60,7 +60,7 @@ func set_quest_state(quest_name: String) -> void:
 	AudioManager.stop_sfx()
 	AudioManager.play_sfx(sfx_quest_done, -5.0)
 	
-	target.get_node(quest_name + "/Panel/Label").modulate = Color.GREEN
+	target.get_node(quest_name + "/Panel/Label").modulate = Color.GREEN # Quand quête fini, passe le texte en vert
 	SaveManager.setElement("Quests", {quest_name: true})
 
 func set_mission_name(new_name: String) -> void:

@@ -39,7 +39,7 @@ func handle_interact() -> void:
 		if (props_around):
 			props_around[props_around.size()-1].on_interact(self)
 
-# SIGNAUX
+#region SIGNAUX
 func onTimelineStarted() -> void:
 	is_talking = true
 
@@ -48,10 +48,13 @@ func onTimelineEnded() -> void:
 
 func set_in_event(arg: bool) -> void:
 	in_event = arg
+#endregion
 
+#region PATHFINDING
 func set_movement_target(movement_target: Vector2) -> void:
 	state_machine.change_state("Pathfinding")
 	navigationAgent.target_position = movement_target
 
 func _on_navigation_agent_2d_navigation_finished() -> void:
 	state_machine.change_state("Regular")
+#endregion

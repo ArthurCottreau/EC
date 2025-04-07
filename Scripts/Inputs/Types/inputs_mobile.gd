@@ -26,6 +26,7 @@ func get_direction() -> Vector2:
 func is_sprinting() -> bool:
 	var sprint: bool = false
 	
+	#Sprint, si le joueur tire le stick à l'extrême (le stick sort de la dead zone)
 	if stick_center.distance_to(knob.position) > SPRINT_DEADZONE:
 		sprint = true
 	

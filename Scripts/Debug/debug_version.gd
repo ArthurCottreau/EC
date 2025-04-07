@@ -29,19 +29,22 @@ func initialize_map_list() -> void:
 func intialize_versionning() -> void:
 	ver_button.text = ProjectSettings.get_setting("application/config/version")
 
-# VERSIONNING BUTTON
+#region VERSIONNING BUTTON
 func _on_button_pressed() -> void:
 	DisplayServer.clipboard_set(ProjectSettings.get_setting("application/config/version"))
+#endregion
 
-# SCORE MODIFIER
+#region SCORE MODIFIER
 func _on_line_edit_text_submitted(new_score: String) -> void:
 	EventBus.emit_signal("set_empreinte", float(new_score))
 	line_edit.text = ""
+#endregion
 
-# SCENE TELEPORTER
+#region SCENE TELEPORTER
 func _on_option_button_item_selected(index: int) -> void:
 	ThreadLoad.load_scene(map_list[index])
 	current_map = map_list[index]
 
 func _on_respawn_debug_item_selected(index: int) -> void:
 	ThreadLoad.load_scene(current_map, index)
+#endregion

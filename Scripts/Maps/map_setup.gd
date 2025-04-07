@@ -34,7 +34,7 @@ func initialize_player() -> void:
 	player = player_resource.instantiate()
 	player.position = $StartPoints.get_child(start_id).position # Ordre du child important
 	if get_node_or_null("Cutscenes"):
-		$Cutscenes.player = player
+		$Cutscenes.player = player # envoie une ref pour déplacer le joueur lors des cutscenes
 	add_child(player)
 
 func initialize_camera() -> void:

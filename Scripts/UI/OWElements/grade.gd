@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func update_grading() -> void:
 	var grading_score: float = carbone_element.empreinte - floor(follower_element.follower/4)
-	match grading_score:
+	match grading_score: # Change la note et l'indicateur en fonction du score
 		var x when x >= 18:
 			grade_label.text = "F"
 			timer_element.time_multi = 1.5

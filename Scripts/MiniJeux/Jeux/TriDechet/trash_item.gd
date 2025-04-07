@@ -5,7 +5,7 @@ class_name TrashItem
 
 var speed: int = 250
 
-@onready var screen_limit: float = get_parent().size.y + 100 # Taille de la fenêtre moins la taille du bouton
+@onready var screen_limit: float = get_parent().size.y + 100 # Taille de la fenêtre, moins la taille du bouton
 
 func _physics_process(delta: float) -> void:
 	position.y += speed * delta

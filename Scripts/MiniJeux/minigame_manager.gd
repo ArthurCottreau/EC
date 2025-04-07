@@ -18,11 +18,11 @@ func setup_minigame(minigame_name: String) -> void:
 	var minigame_instance: Node2D = minigame_load.instantiate()
 	
 	minigame_instance.minigame_manager = self
-	SubViewContainer.custom_minimum_size =  minigame_instance.get_window_size()
+	SubViewContainer.custom_minimum_size =  minigame_instance.get_window_size() # Défini la taille de la fenêtre à partir du noeud WindowSize dans la scène du minijeu
 	exit_button.position = ((size - SubViewContainer.custom_minimum_size) / 2) - exit_button_offset
 	
 	target.add_child(minigame_instance)
-	EventBus.emit_signal("in_game_event_active", true)
+	EventBus.emit_signal("in_game_event_active", true) # Freeze le joueur tant que l'evenement est actif
 	visible = true
 	
 func erase_minigame(timeline: String = "", bookmark: int = 0) -> void:
@@ -30,8 +30,9 @@ func erase_minigame(timeline: String = "", bookmark: int = 0) -> void:
 		n.queue_free()
 		
 	visible = false
-
-	if timeline:
+	
+	# Si il y a un dialogue dans l'export du minijeu : Déclenche le dialogue à la fin du minijeu 
+	if timeline: 
 		Dialogic.start(timeline, "book" + str(bookmark))
 		await Dialogic.timeline_started
 	

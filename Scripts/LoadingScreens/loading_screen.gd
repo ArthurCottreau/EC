@@ -13,8 +13,12 @@ func initialize_loading_screen() -> void:
 
 func initialize_load_type() -> void:
 	EventBus.emit_signal("set_ui_visibility", false)
+	
+	#chargement rapide
 	if loading_screen_key.is_empty():
 		_on_event_trigger()
+		
+	#chargement avec un écran de chargement
 	else:
 		if AudioManager.is_same_music(next_scene.music):
 			AudioManager.fade_music(-80, 3.0)

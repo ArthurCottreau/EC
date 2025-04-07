@@ -6,7 +6,7 @@ extends Control
 @export var time_multi : float = 1.0
 
 var time : float
-var format_string = "%02d : %02d : %02d"
+var format_string = "%02d : %02d : %02d" 
 var tween: Tween
 var is_tweening: bool
 
@@ -19,8 +19,8 @@ func _ready() -> void:
 	_initialize_signals()
 
 func _initialize_timer() -> void:
-	time_label.text = format_string % [heure, minute, seconde]
-	time = (heure * 3600) + (minute * 60) + seconde
+	time_label.text = format_string % [heure, minute, seconde] # affiche le temps en format HH : MM : SS
+	time = (heure * 3600) + (minute * 60) + seconde # calcul du temps initial en secs
 	changing_timer_bar.visible = false
 
 func _initialize_signals() -> void:
@@ -47,6 +47,7 @@ func change_time(var_time: float) -> void:
 		changing_timer_bar.visible = true
 		changing_timer_bar.value = -time
 		
+	# Animation de la bar de temps / thermomètre
 	tween = create_tween()
 	tween.connect("finished", tween.kill)
 	tween.tween_property(timer_bar, "value", -time, 0.5)

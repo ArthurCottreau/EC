@@ -57,7 +57,7 @@ func load() -> void:
 		saveDict = onlineSave
 	elif onlineSave == null:
 		saveDict = offlineSave
-	elif _is_later(onlineSave["Datetime"],offlineSave["Datetime"]):
+	elif _is_later(onlineSave["Datetime"],offlineSave["Datetime"]): # Vérifie si la save online est + récente que la save locale
 		saveDict = onlineSave
 	else:
 		saveDict = offlineSave
@@ -89,7 +89,6 @@ func _swap_quotes(data:String,swapToDoubleQuotes:bool) -> String:
 		return temp.replace("\n","")
 
 func deleteSave() -> void:
-	# empty file
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	file.close()
 	

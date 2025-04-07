@@ -23,7 +23,7 @@ func _initialize_viewport() -> void:
 	_setup_resolution_change()
 
 func _initialize_inputs() -> void:
-	match OS.get_name():
+	match OS.get_name(): 
 		"Web":
 			if _is_mobile():
 				inputs = load(controls.types["Mobile"]).instantiate()

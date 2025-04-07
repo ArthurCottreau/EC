@@ -21,12 +21,6 @@ func _physics_process(delta):
 
 func initialize_pawn():
 	pass
-	# Pour NPC
-	# Wait for the first physics frame so the NavigationServer can sync.
-	# await get_tree().physics_frame
-	# Now that the navigation map is no longer empty, set the movement target.
-	# if target:
-	#	set_movement_target(target)
 
 func handle_state_update(delta: float) -> void:
 	state_machine.update_state(delta)

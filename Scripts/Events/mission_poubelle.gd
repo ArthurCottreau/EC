@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	if SaveManager.getElement("Missions", "Poubelle") == null: # Si il y a aucune sauvegarde
+	if SaveManager.getElement("Missions", "Poubelle") == null: # Si il n'y a aucune sauvegarde
 		var poubelle_data: Array[bool]
 		
 		for i in get_children().size():

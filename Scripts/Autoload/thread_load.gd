@@ -31,7 +31,7 @@ func load_scene(next_scene: String, pos_id: int = 0, loading_screen_type: String
 			3:
 				var scene: Node2D = ResourceLoader.load_threaded_get(maps.locations[next_scene]).instantiate()
 				
-				# Pour éviter les problèmes si on une scène sans joueur (ex: menu, leaderboard)
+				# Pour éviter les problèmes si on crée une scène sans joueur (ex: menu, leaderboard)
 				if scene is Map:
 					scene.start_id = pos_id
 				

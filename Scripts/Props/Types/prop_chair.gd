@@ -10,7 +10,7 @@ var is_siting: bool = false
 
 func on_interact(player: Player) -> void:
 	if !is_siting:
-		collision.disabled = true
+		collision.disabled = true # Besoin de désactiver la collision de la chaise pour assoir le joueur
 		player.state_machine.change_state("Sitting")
 		player.skin.set_animation_direction(Vector2i(sit_direction,0))
 		player.z_index = 2
