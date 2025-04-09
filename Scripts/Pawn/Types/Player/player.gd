@@ -12,6 +12,7 @@ var curr_speed: float
 
 var in_event: bool = false
 var is_talking: bool = false
+var is_sprinting: bool = false
 
 func _ready() -> void:
 	super()
@@ -30,7 +31,11 @@ func handle_input() -> void:
 
 func handle_sprint() -> void:
 	if (Game.inputs.is_sprinting()):
+		is_sprinting = !is_sprinting
+	
+	if is_sprinting:
 		curr_speed = SPRINT_SPEED
+	
 	else:
 		curr_speed = SPEED
 

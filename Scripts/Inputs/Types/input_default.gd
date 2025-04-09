@@ -20,7 +20,7 @@ func get_direction() -> Vector2:
 	return Vector2(horizontal, vertical)
 
 func is_sprinting() -> bool:
-	return Input.is_action_pressed("sprint")
+	return Input.is_action_just_pressed("sprint")
 
 func is_interacting() -> bool:
 	var result: bool = Input.is_action_just_pressed("interact")

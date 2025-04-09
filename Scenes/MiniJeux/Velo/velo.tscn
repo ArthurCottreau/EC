@@ -203,3 +203,12 @@ icon_alignment = 1
 expand_icon = true
 position_item = Vector2(700, 0)
 id_anchor_interactible = Array[int]([3])
+
+[node name="Label" type="Label" parent="WindowSize"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 73.0
+offset_right = 797.0
+offset_bottom = 122.0
+text = "NBs de réparation:
+ 0/11"

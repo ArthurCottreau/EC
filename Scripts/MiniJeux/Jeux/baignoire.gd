@@ -3,6 +3,7 @@ extends Control
 @export var sfx_valve: AudioStreamWAV
 
 var is_bath_mode: bool = false
+var mouse_on_button: bool = false
 
 @onready var animated_sprite = $SpriteBaignoire
 @onready var bouchon_button = $Bouchon
@@ -17,23 +18,23 @@ func shower_start() -> void:
 	timer.start()
 
 func shower():
-	progress_bar.value += 1
+	progress_bar.value -= 1
 	
 	if is_bath_mode:
-		if progress_bar.value >= 9:
+		if progress_bar.value <= 9:
 			# Placez le signal de sauvegarde ici
 			EventBus.emit_signal("set_quest_state", "1-2_shower")
 			shower_end()
 	else:
-		if progress_bar.value >= 6 and progress_bar.value < 12:
+		if progress_bar.value <= 18 and progress_bar.value >= 12:
 			# Placez le signal de sauvegarde ici
-			if progress_bar.value == 6:
+			if progress_bar.value == 12:
 				EventBus.emit_signal("set_empreinte", -0.2)
 				EventBus.emit_signal("set_quest_state", "1-2_shower")
-		elif progress_bar.value >= 12 and progress_bar.value < 18:
-			if progress_bar.value == 12:
+		elif progress_bar.value < 12 and progress_bar.value >= 6:
+			if progress_bar.value == 6:
 				EventBus.emit_signal("set_empreinte", 0.1)
-		elif progress_bar.value >= 18:
+		elif progress_bar.value == 0:
 			EventBus.emit_signal("set_empreinte", 0.1)
 			shower_end()
 			return
@@ -48,7 +49,7 @@ func shower_end() -> void: # Vide la baignoire puis finis le mini jeu -> valide 
 	get_parent().quit_minigame()
 
 func shower_stop(): # Pause la douche avant que le joueur ne soit lavé. Si lavé, appel shower_end
-	if progress_bar.value >= 6:
+	if progress_bar.value <= 12:
 		shower_end()
 		return
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgpu4hmb3vlfw"]
+[gd_scene load_steps=31 format=3 uid="uid://dgpu4hmb3vlfw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="3_jv3uq"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_0rf1o"]
 [ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="5_1kvi7"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="5_mns28"]
+[ext_resource type="Texture2D" uid="uid://bxwy1b0lmjcsk" path="res://Graphics/TEMP/goutte_eau.png" id="8_ot1v4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
 atlas = ExtResource("2_3ua7n")
@@ -154,6 +156,11 @@ animations = [{
 atlas = ExtResource("2_3ua7n")
 region = Rect2(7, 21, 4, 4)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ot1v4"]
+shader = ExtResource("5_mns28")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mns28"]
 atlas = ExtResource("5_1kvi7")
 region = Rect2(173, 53, 8, 8)
@@ -161,6 +168,13 @@ region = Rect2(173, 53, 8, 8)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jv3uq"]
 atlas = ExtResource("4_0rf1o")
 region = Rect2(49, 2, 5, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kvi7"]
+bg_color = Color(0.275113, 0.630969, 0.890769, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Baignoire" type="Node2D"]
 script = ExtResource("1_7gsmj")
@@ -182,12 +196,13 @@ sprite_frames = SubResource("SpriteFrames_mbos1")
 animation = &"start_shower"
 autoplay = "default"
 
-[node name="ValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]
+[node name="SpriteValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]
 modulate = Color(0.539663, 0.539663, 0.539663, 1)
 position = Vector2(-7, -9)
 texture = SubResource("AtlasTexture_h6tp1")
 
 [node name="ValveDroite" type="Button" parent="WindowSize/SpriteBaignoire"]
+material = SubResource("ShaderMaterial_ot1v4")
 offset_left = 5.0
 offset_top = -11.0
 offset_right = 13.0
@@ -211,6 +226,7 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 8
+disabled = true
 toggle_mode = true
 icon = SubResource("AtlasTexture_jv3uq")
 flat = true
@@ -218,17 +234,45 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
-visible = false
 layout_mode = 0
-offset_left = 140.0
-offset_top = 516.0
+offset_left = 633.0
+offset_top = 152.0
 offset_right = 655.0
 offset_bottom = 543.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_1kvi7")
 max_value = 18.0
+value = 18.0
+fill_mode = 3
 show_percentage = false
+
+[node name="HSeparator" type="HSeparator" parent="WindowSize/ProgressBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 127.0
+offset_right = 21.0
+offset_bottom = 131.0
+theme_override_constants/separation = 0
+
+[node name="HSeparator2" type="HSeparator" parent="WindowSize/ProgressBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 258.0
+offset_right = 21.0
+offset_bottom = 262.0
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize/ProgressBar"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -49.0
+offset_right = 502.0
+offset_bottom = 463.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ot1v4")
 
 [node name="Timer" type="Timer" parent="WindowSize"]
 
+[connection signal="mouse_entered" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize" method="_on_valve_droite_mouse_hover"]
+[connection signal="mouse_exited" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize" method="_on_valve_droite_mouse_hover"]
 [connection signal="pressed" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize" method="_on_button_pressed"]
 [connection signal="pressed" from="WindowSize/Bouchon" to="WindowSize" method="_on_bouchon_pressed"]
 [connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="shower"]
