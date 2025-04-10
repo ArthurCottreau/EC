@@ -226,7 +226,6 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 8
-disabled = true
 toggle_mode = true
 icon = SubResource("AtlasTexture_jv3uq")
 flat = true
@@ -246,6 +245,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="HSeparator" type="HSeparator" parent="WindowSize/ProgressBar"]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 127.0
@@ -254,6 +254,7 @@ offset_bottom = 131.0
 theme_override_constants/separation = 0
 
 [node name="HSeparator2" type="HSeparator" parent="WindowSize/ProgressBar"]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 258.0

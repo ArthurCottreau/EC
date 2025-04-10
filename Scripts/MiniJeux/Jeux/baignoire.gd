@@ -21,7 +21,8 @@ func shower():
 	progress_bar.value -= 1
 	
 	if is_bath_mode:
-		if progress_bar.value <= 9:
+		progress_bar.max_value = 9
+		if progress_bar.value <= 0:
 			# Placez le signal de sauvegarde ici
 			EventBus.emit_signal("set_quest_state", "1-2_shower")
 			shower_end()

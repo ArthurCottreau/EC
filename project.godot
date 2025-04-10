@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="090425-15"
+config/version="100425-10"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -110,7 +110,6 @@ choices/hotkey_behaviour=1
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
