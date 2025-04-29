@@ -37,14 +37,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.props_around.append(self)
 		draw_outline()
-	if body is PNJCar:
-		print("test")
-		state_machine.change_state("Regular")
 		
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
 		body.props_around.erase(self)
 		erase_outline() 
-	if body is PNJCar:
-		state_machine.change_state("Pathfinding")
