@@ -109,7 +109,7 @@ directories/dtl_directory={
 "pnj_random2": "res://Dialogues/PeriphOuest/pnj_random2.dtl",
 "pnj_random3": "res://Dialogues/PeriphOuest/pnj_random3.dtl",
 "pnj_random4": "res://Dialogues/PeriphOuest/pnj_random4.dtl",
-"pnj_repatateur": "res://Dialogues/PeriphOuest/pnj_reparateur.dtl",
+"pnj_reparateur": "res://Dialogues/PeriphOuest/pnj_reparateur.dtl",
 "pnj_sonia": "res://Dialogues/Amphitheatre/pnj_sonia.dtl",
 "pnj_verdure": "res://Dialogues/CentreVille/pnj_verdure.dtl",
 "porte_appartement": "res://Dialogues/PeriphOuest/porte_appartement.dtl",

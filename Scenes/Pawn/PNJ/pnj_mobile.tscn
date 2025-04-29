@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_rvass"]
 [ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_j34d2"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_utgjr"]
 resource_local_to_scene = true
 shader = ExtResource("5_iwcx3")
@@ -307,6 +306,8 @@ size = Vector2(26, 33)
 
 [node name="PNJ_Mobile" type="CharacterBody2D"]
 y_sort_enabled = true
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_mqls6")
 path_size = 3

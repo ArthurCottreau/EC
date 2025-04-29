@@ -21,5 +21,7 @@ func animate(pawn: Pawn, _delta: float) -> void:
 		pawn.skin.set_animation_state(PawnSkin.ANIMATION_STATES.walk)
 		pawn.skin.set_animation_direction(pawn.get_real_velocity())
 		pawn.visible = true
+		pawn.collision.disabled = false
+		pawn.detecteur.disabled = false
 	else:
 		pawn.skin.set_animation_state(PawnSkin.ANIMATION_STATES.idle)
