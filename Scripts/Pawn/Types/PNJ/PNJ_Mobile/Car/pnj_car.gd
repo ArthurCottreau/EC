@@ -46,8 +46,8 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 		current_target += 1
 		set_movement_target(target_array[current_target].position)
 		visible = false
-		collision.shape = collision_shape
-		detecteur.shape = detecteur_shape
+		collision.disabled = true
+		detecteur.disabled = true
 		position = target_array[current_target-1].position
 		
 		
